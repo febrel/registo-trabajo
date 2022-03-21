@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block header %}
+
+
+{% with messages= get_flashed_messages() %}
+{% if messages %}
+{% for men in messages %}
+
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <p>{{messages}}</p>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+{% endfor %}
+{% endif %}
+{% endwith%}
+
+{% endblock%}
+
+
+{% block content %}
+  <div class="container">
+    
+    <div class="row px-3">
+  
+      <div class="col-lg-5 col-xl-5 card flex-row mx-auto px-0">
+
+        <div class="card-body">
+          <h4 class="title text-center mt-4">
+            Register
+          </h4>
+          <form class="form-box px-3">
+            <div class="form-input">
+              <span><i class="fa fa-address-card""></i></span>
+              <input type="text" name="" placeholder="Cédula"  required>
+              
+            </div>
+
+            <div class="form-input">
+                <span><i class="fa fa-list-alt"></i></span>
+                <input type="text" name="" placeholder="Nombres"  required>
+                
+              </div>
+
+              <div class="form-input">
+                <span><i class="fa fa-envelope-o"></i></span>
+                <input type="email" name="" placeholder="Correo"  required>
+                
+              </div>
+
+              <div class="form-input">
+                <span><i class="fa fa-user-o"></i></span>
+                <input type="text" name="" placeholder="Usuario" tabindex="10" required>
+                
+              </div>
+
+            <div class="form-input">
+              <span><i class="fa fa-key"></i></span>
+              <input type="password" name="" placeholder="Password" required>
+            </div>
+
+
+
+            <div class="mb-3">
+              <button type="submit" class="btn btn-block text-uppercase">
+                Registrar
+              </button>
+            </div>
+
+            
+
+            <hr class="my-4">
+
+            <div class="text-center mb-2">
+              Ingresar al sistema
+              <a href="{{url_for('auth.login')}}" class="register-link">
+                Login
+              </a>
+            </div>
+
+        </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

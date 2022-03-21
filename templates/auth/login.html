@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+{% block header %}
+
+
+{% with messages= get_flashed_messages() %}
+{% if messages %}
+{% for men in messages %}
+
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <p>{{messages}}</p>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+{% endfor %}
+{% endif %}
+{% endwith%}
+
+{% endblock%}
+
+
+{% block content %}
+
+  <div class="container">
+    
+    <div class="row px-3">
+  
+      <div class="col-lg-5 col-xl-5 card flex-row mx-auto px-0">
+
+        <div class="card-body">
+          <h4 class="title text-center mt-4">
+            Login
+          </h4>
+          <form class="form-box px-3">
+            <div class="form-input">
+              <span><i class="fa fa-envelope-o"></i></span>
+              <input type="text" name="" placeholder="Usuario" tabindex="10" required>
+              
+            </div>
+            <div class="form-input">
+              <span><i class="fa fa-key"></i></span>
+              <input type="password" name="" placeholder="Password" required>
+            </div>
+
+            <div class="mb-3">
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="cb1" name="">
+                <label class="custom-control-label" for="cb1">Remember me</label>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <button type="submit" class="btn btn-block text-uppercase">
+                Login
+              </button>
+            </div>
+
+            <div class="text-right">
+              <a href="#" class="forget-link">
+                Recordar Password?
+              </a>
+            </div>
+
+            <div class="text-center mb-3">
+              or login with
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-6">
+                <a href="#" class="btn btn-block btn-social btn-facebook">
+                  GitHub
+                </a>
+              </div>
+
+              <div class="col-6">
+                <a href="#" class="btn btn-block btn-social btn-google">
+                  google
+                </a>
+              </div>
+
+ 
+
+            </div>
+
+            <hr class="my-4">
+
+            <div class="text-center mb-2">
+              No tienes una cuenta?
+              <a href="{{url_for('auth.register')}}" class="register-link">
+                Registrate
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% endblock %}

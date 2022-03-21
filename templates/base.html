@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    <title>{% block title  %} {% endblock %} -Todo List </title>
+    <link rel="icon" type="image/png" href="{{url_for('static', filename='img/icono.svg')}}">
+
+    
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css')}}">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+
+</head>
+<body>
+
+
+{% if g.user %}
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+       <div class="mx-auto order-0">
+           <a class="navbar-brand mx-auto" href="#">Todo List</a>
+           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+               <span class="navbar-toggler-icon"></span>
+           </button>
+       </div>
+
+       <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+           <ul class="navbar-nav ml-auto" >
+             
+
+             <span class="navbar-brand text-success font-italic">{{g.user[1] }}</span>
+<!-- 
+              <a href="{{url_for('auth.logout')}} "><img class="navbar-brand user-img_2" src="{{url_for('static', filename='img/close.svg')}}"></a> </li> -->
+
+               
+           </ul>
+       </div>
+</nav>
+
+{% endif %}
+
+<header>
+    {% block header %} {% endblock %}
+</header>
+
+
+{% block content %} {% endblock %}
+
+</body>
+
+</html>
