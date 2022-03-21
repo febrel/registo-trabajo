@@ -3,7 +3,6 @@ import db
 import auth
 import todo
 
-
 def create_app():
     app = Flask(__name__)
 

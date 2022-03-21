@@ -7,6 +7,7 @@
 {% if messages %}
 {% for men in messages %}
 
+
 <div class="alert alert-success alert-dismissible fade show" role="alert">
   <p>{{messages}}</p>
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -32,34 +33,34 @@
           <h4 class="title text-center mt-4">
             Register
           </h4>
-          <form class="form-box px-3">
+          <form class="form-box px-3" method="post">
             <div class="form-input">
               <span><i class="fa fa-address-card""></i></span>
-              <input type="text" name="" placeholder="Cédula"  required>
+              <input type="text" name="cedula" placeholder="Cédula"  required>
               
             </div>
 
             <div class="form-input">
                 <span><i class="fa fa-list-alt"></i></span>
-                <input type="text" name="" placeholder="Nombres"  required>
+                <input type="text" name="nombres" placeholder="Nombres"  required>
                 
               </div>
 
               <div class="form-input">
                 <span><i class="fa fa-envelope-o"></i></span>
-                <input type="email" name="" placeholder="Correo"  required>
+                <input type="email" name="correo" placeholder="Correo"  required>
                 
               </div>
 
               <div class="form-input">
                 <span><i class="fa fa-user-o"></i></span>
-                <input type="text" name="" placeholder="Usuario" tabindex="10" required>
+                <input type="text" name="username" placeholder="Usuario" tabindex="10" required>
                 
               </div>
 
             <div class="form-input">
               <span><i class="fa fa-key"></i></span>
-              <input type="password" name="" placeholder="Password" required>
+              <input type="password" name="password" placeholder="Password" required>
             </div>
 
 
